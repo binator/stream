@@ -1,0 +1,37 @@
+[package]
+name = "binator_stream"
+authors = ["Stargateur"]
+version = "0.0.0"
+description = "binator stream"
+license = "Zlib"
+repository = "https://github.com/binator/stream"
+readme = "readme.md"
+keywords = ["parsing", "combinator", "ascii"]
+categories = ["parsing"]
+edition = "2021"
+
+include = [
+  "readme.md",
+  "license.md",
+  "Cargo.toml",
+  "rustfmt.toml",
+  "src/**/*.rs",
+]
+
+[features]
+default = ["bit_stream", "std"]
+bit_stream = ["num-traits"]
+alloc = []
+std = ["alloc"]
+
+[dependencies.binator_core]
+version = "0.0.2"
+default-features = false
+
+[dependencies.tracing]
+version = "0.1"
+optional = true
+
+[dependencies.num-traits]
+version = "0.2"
+optional = true
